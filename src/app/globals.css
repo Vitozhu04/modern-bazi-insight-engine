@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 224 25% 12%;
+    --card: 0 0% 100%;
+    --muted: 30 12% 92%;
+    --border: 220 15% 88%;
+    --ring: 220 16% 72%;
+    --primary: 220 25% 18%;
+    --secondary: 18 30% 30%;
+    --accent: 195 25% 45%;
+    --radius: 12px;
+    --font-sans: "IBM Plex Sans", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+    --font-serif: "Noto Serif SC", "Source Han Serif SC", "Times New Roman", serif;
+    --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+  }
+
+  .dark {
+    --background: 222 28% 8%;
+    --foreground: 210 30% 96%;
+    --card: 224 24% 12%;
+    --muted: 223 18% 18%;
+    --border: 220 12% 22%;
+    --ring: 220 16% 45%;
+    --primary: 210 30% 96%;
+    --secondary: 18 20% 50%;
+    --accent: 195 30% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    letter-spacing: var(--tracking-normal, 0em);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 26s linear infinite;
+}
